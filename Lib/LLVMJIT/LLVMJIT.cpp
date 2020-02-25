@@ -211,6 +211,10 @@ TargetValidationResult LLVMJIT::validateTargetMachine(
 
 		return TargetValidationResult::valid;
 	}
+	else if(targetArch == llvm::Triple::riscv64)
+	{
+		return TargetValidationResult::valid;
+	}
 	else
 	{
 		if(featureSpec.simd) { return TargetValidationResult::wavmDoesNotSupportSIMDOnArch; }
